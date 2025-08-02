@@ -1,0 +1,489 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0EB04EE4-BC08-4ED5-8A90-1E063288FC42}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>FTTEST</RootNamespace>
+    <AssemblyName>FTTEST</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>
+    </DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>fttest_logo.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Interop.SDriver, Version=2.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <HintPath>bin\Release\Interop.SDriver.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.8.0.0\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Oracle.ManagedDataAccess, Version=4.122.23.1, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
+      <HintPath>..\packages\Oracle.ManagedDataAccess.23.7.0\lib\net472\Oracle.ManagedDataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=6.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.6.0.1\lib\net461\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Formats.Asn1, Version=8.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Formats.Asn1.8.0.1\lib\net462\System.Formats.Asn1.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encodings.Web, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.8.0.0\lib\net462\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=8.0.0.5, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Json.8.0.5\lib\net462\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppConfig\GlobalConfig.cs" />
+    <Compile Include="Database\Database.cs" />
+    <Compile Include="Database\Oracle.cs" />
+    <Compile Include="Database\Sql.cs" />
+    <Compile Include="FGA.cs" />
+    <Compile Include="FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMain.Designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="i2c.cs" />
+    <Compile Include="iniFile.cs" />
+    <Compile Include="InputSn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InputSn.Designer.cs">
+      <DependentUpon>InputSn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SDriver\SDriver.cs" />
+    <Compile Include="TestProcess\FUD\Arran.cs" />
+    <Compile Include="TestProcess\FUD\Barra.cs" />
+    <Compile Include="TestProcess\FUD\Cardhu.cs" />
+    <Compile Include="TestProcess\FUD\Harris.cs" />
+    <Compile Include="TestProcess\FUD\Edradour.cs" />
+    <Compile Include="TestProcess\FUD\kavala.cs" />
+    <Compile Include="TestProcess\PRE\Barra.cs" />
+    <Compile Include="TestProcess\PRE\Owllabs.cs" />
+    <Compile Include="TestProcess\PRE\QCS.cs" />
+    <Compile Include="TestProcess\TestProcess.cs" />
+    <Compile Include="TestProcess\ULPK_new\edradour.cs" />
+    <Compile Include="UDFs\API.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="UDFs\UDF.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Web References\WebReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InputSn.resx">
+      <DependentUpon>InputSn.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="bin\Debug%27%27" />
+    <None Include="bin\Debug\--arran_fud.bat" />
+    <None Include="bin\Debug\--FTTEST.ini" />
+    <None Include="bin\Debug\.bt_nv.bin" />
+    <None Include="bin\Debug\.bt_nv_BC.D7.13.01.E0.01.bin" />
+    <None Include="bin\Debug\.bt_nv_BC.D7.13.01.E0.01.bin.MD5" />
+    <None Include="bin\Debug\.bt_nv_BC.D7.13.01.E3.79.bin" />
+    <None Include="bin\Debug\.bt_nv_BC.D7.13.01.E3.79.bin.MD5" />
+    <None Include="bin\Debug\.bt_nv_C4.63.FB.0C.45.E8.bin" />
+    <None Include="bin\Debug\.bt_nv_C4.63.FB.0C.45.E8.bin.MD5" />
+    <None Include="bin\Debug\AUTOIT.zip" />
+    <None Include="bin\Debug\barra_fud.bat" />
+    <None Include="bin\Debug\Debug.lnk" />
+    <None Include="bin\Debug\FactoryApp.apk" />
+    <None Include="bin\Debug\fastloader.bat" />
+    <None Include="bin\Debug\FTTEST.exe.config" />
+    <None Include="bin\Debug\FTTEST.ini" />
+    <None Include="bin\Debug\I210NIC.otp" />
+    <None Include="bin\Debug\I210_INVM_C463FB0012F2.Hex" />
+    <None Include="bin\Debug\I210_INVM_C463FB001385.Hex" />
+    <None Include="bin\Debug\I210_INVM_C463FB001391.Hex" />
+    <None Include="bin\Debug\I210_INVM_C463FB0013B5.Hex" />
+    <None Include="bin\Debug\I210_Invm_Copper_NoAPM_v0.6.HEX" />
+    <None Include="bin\Debug\Neat_cmd---\Check_eth.bat" />
+    <None Include="bin\Debug\Neat_cmd---\Check_SDF.bat" />
+    <None Include="bin\Debug\Neat_cmd---\check_sn.bat" />
+    <None Include="bin\Debug\Neat_cmd---\check_sn_owl.bat" />
+    <None Include="bin\Debug\Neat_cmd---\FactoryApp.apk" />
+    <None Include="bin\Debug\Neat_cmd---\Harris.bat" />
+    <None Include="bin\Debug\Neat_cmd---\set_apk.bat" />
+    <None Include="bin\Debug\Neat_cmd---\set_mictest_Edradour.bat" />
+    <None Include="bin\Debug\Neat_cmd\batch-example.bat" />
+    <None Include="bin\Debug\Neat_cmd\check_channel.bat" />
+    <None Include="bin\Debug\Neat_cmd\Check_SDF.bat" />
+    <None Include="bin\Debug\Neat_cmd\FactoryApp.apk" />
+    <None Include="bin\Debug\Neat_cmd\get_apk.bat" />
+    <None Include="bin\Debug\Neat_cmd\get_touch_fw.bat" />
+    <None Include="bin\Debug\Neat_cmd\Get_Voc_Value.bat" />
+    <None Include="bin\Debug\Neat_cmd\Harris.bat" />
+    <None Include="bin\Debug\Neat_cmd\insert_onetwo.bat" />
+    <None Include="bin\Debug\Neat_cmd\Play_Audio_OFF_QCS.bat" />
+    <None Include="bin\Debug\Neat_cmd\play_Audio_ON_QCS.bat" />
+    <None Include="bin\Debug\Neat_cmd\Radar_Test_Close_QCS.bat" />
+    <None Include="bin\Debug\Neat_cmd\Radar_Test_QCS.bat" />
+    <None Include="bin\Debug\Neat_cmd\Record_audio_1_QCS.bat" />
+    <None Include="bin\Debug\Neat_cmd\Record_audio_4_QCS.bat" />
+    <None Include="bin\Debug\Neat_cmd\Record_audio_7_QCS.bat" />
+    <None Include="bin\Debug\Neat_cmd\set_apk.bat" />
+    <None Include="bin\Debug\Neat_cmd\sox-14-4-2_20240816\batch-example.bat" />
+    <None Include="bin\Debug\Neat_cmd\sox-14-4-2_20240816\check_channel.bat" />
+    <None Include="bin\Debug\Neat_cmd\sox-14-4-2_20240816\sox.pdf" />
+    <None Include="bin\Debug\Neat_cmd\sox-14-4-2_20240816\soxformat.pdf" />
+    <None Include="bin\Debug\Neat_cmd\sox-14-4-2_20240816\soxi.pdf" />
+    <None Include="bin\Debug\Neat_cmd\sox-14-4-2_20240816\wget.ini" />
+    <None Include="bin\Debug\Neat_cmd\sox.pdf" />
+    <None Include="bin\Debug\Neat_cmd\soxformat.pdf" />
+    <None Include="bin\Debug\Neat_cmd\soxi.pdf" />
+    <None Include="bin\Debug\Neat_cmd\wget.ini" />
+    <None Include="bin\Debug\set_apk.bat" />
+    <None Include="bin\Debug\te_arran_ddc.bat" />
+    <None Include="bin\Debug\te_barra_ddc.bat" />
+    <None Include="bin\Debug\UpdateServerFile.bat" />
+    <None Include="bin\Debug\wlan_mac.bin" />
+    <None Include="bin\Debug\wlan_mac_BC-D7-13-01-E1-2D.bin" />
+    <None Include="bin\Debug\wlan_mac_BC-D7-13-01-E1-2D.bin.MD5" />
+    <None Include="bin\Debug\wlan_mac_C4-63-FB-0B-C0-7E.bin" />
+    <None Include="bin\Debug\wlan_mac_C4-63-FB-0B-C0-7E.bin.MD5" />
+    <None Include="bin\Debug\wlan_mac_C4-63-FB-0C-21-BD.bin" />
+    <None Include="bin\Debug\wlan_mac_C4-63-FB-0C-21-BD.bin.MD5" />
+    <None Include="bin\Debug\WriteEthMac\.bt_nv.bin" />
+    <None Include="bin\Debug\WriteEthMac\.bt_nv_D8.E7.43.0C.AA.EA.bin" />
+    <None Include="bin\Debug\WriteEthMac\.bt_nv_D8.E7.43.0C.AA.EA.bin.MD5" />
+    <None Include="bin\Debug\WriteEthMac\8125BEF.cfg" />
+    <None Include="bin\Debug\WriteEthMac\adb" />
+    <None Include="bin\Debug\WriteEthMac\AmtEthInvm.rar" />
+    <None Include="bin\Debug\WriteEthMac\Check_auxeth.bat" />
+    <None Include="bin\Debug\WriteEthMac\Check_eth.bat" />
+    <None Include="bin\Debug\WriteEthMac\Check_owllabs_bt_mac.bat" />
+    <None Include="bin\Debug\WriteEthMac\Check_owllabs_eth_mac.bat" />
+    <None Include="bin\Debug\WriteEthMac\Check_owllabs_wifi_mac.bat" />
+    <None Include="bin\Debug\WriteEthMac\Check_wifi_bt.bat" />
+    <None Include="bin\Debug\WriteEthMac\I210NIC.otp" />
+    <None Include="bin\Debug\WriteEthMac\I210_INVM_C463FB00110C.Hex" />
+    <None Include="bin\Debug\WriteEthMac\I210_Invm_Copper_NoAPM_v0.6.HEX" />
+    <None Include="bin\Debug\WriteEthMac\I210_INVM_D8E7430CAA0A.Hex" />
+    <None Include="bin\Debug\WriteEthMac\I210_INVM_D8E7430CAAE0.Hex" />
+    <None Include="bin\Debug\WriteEthMac\I210_INVM_D8E7430CAAEA.Hex" />
+    <None Include="bin\Debug\WriteEthMac\I210_INVM_D8E7430CAAEB.Hex" />
+    <None Include="bin\Debug\WriteEthMac\I210_INVM_D8E743385AA7.Hex" />
+    <None Include="bin\Debug\WriteEthMac\I210_INVM_D8E743385AA8.Hex" />
+    <None Include="bin\Debug\WriteEthMac\I210_INVM_D8E743385B0D.Hex" />
+    <None Include="bin\Debug\WriteEthMac\pushRTL8125tool.bat" />
+    <None Include="bin\Debug\WriteEthMac\rtnicpg-aarch64-armv8" />
+    <None Include="bin\Debug\WriteEthMac\s.bat" />
+    <None Include="bin\Debug\WriteEthMac\set_OwlLabs_1st_time.bat" />
+    <None Include="bin\Debug\WriteEthMac\SOP.docx" />
+    <None Include="bin\Debug\WriteEthMac\WriteEthMac.bat" />
+    <None Include="bin\Release\---FTTEST.ini" />
+    <None Include="bin\Release\FTTEST.ini" />
+    <None Include="bin\Release\UpdateServerFile--.bat" />
+    <None Include="Oracle.DataAccess.Common.Configuration.Section.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Oracle.ManagedDataAccess.Client.Configuration.Section.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Web References\WebReference\AVTC_webservice.wsdl" />
+    <None Include="Web References\WebReference\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ft_logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Exit.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\toolgray.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Debug\WriteEthMac\AmtEthInvm20221129_QCS8250_EXE\AmtEthInvm20221129_QCS8250_EXE\" />
+    <Folder Include="bin\Debug\WriteEthMac\AmtEthInvm\" />
+    <Folder Include="TestProcess\CTK\" />
+    <Folder Include="TestProcess\FRQ\" />
+    <Folder Include="TestProcess\HIP\" />
+    <Folder Include="TestProcess\VOC\" />
+    <Folder Include="TestProcess\WBC\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\20200918.txt" />
+    <Content Include="bin\Debug\20241202.txt" />
+    <Content Include="bin\Debug\20250219.txt" />
+    <Content Include="bin\Debug\ARRAN_FW_UPDATE.TXT" />
+    <Content Include="bin\Debug\AUTOIT.txt" />
+    <Content Include="bin\Debug\command_ack.txt" />
+    <Content Include="bin\Debug\data_commaand_ack.txt" />
+    <Content Include="bin\Debug\data_command_ack.txt" />
+    <Content Include="bin\Debug\FT44TEST.exe" />
+    <Content Include="bin\Debug\FTTESqqwqT.exe" />
+    <Content Include="bin\Debug\FTTEST-harris.exe" />
+    <Content Include="bin\Debug\FTTEST-kkk.exe" />
+    <Content Include="bin\Debug\FTTEST.exe" />
+    <Content Include="bin\Debug\FTTEST.pdb" />
+    <Content Include="bin\Debug\FTTEST0604.exe" />
+    <Content Include="bin\Debug\FTTEST11.exe" />
+    <Content Include="bin\Debug\FTTEST111.pdb" />
+    <Content Include="bin\Debug\FTTEST888.exe" />
+    <Content Include="bin\Debug\FTTEST_12mic.exe" />
+    <Content Include="bin\Debug\FTTEST_1MC.exe" />
+    <Content Include="bin\Debug\FTTEST_ARRAN.exe" />
+    <Content Include="bin\Debug\FTTEST_CR.exe" />
+    <Content Include="bin\Debug\FTTEST_kava.exe" />
+    <Content Include="bin\Debug\FTTEST_QC8550.exe" />
+    <Content Include="bin\Debug\HARRIS2.txt" />
+    <Content Include="bin\Debug\Interop.SDriver.dll" />
+    <Content Include="bin\Debug\LightSensorLog.txt" />
+    <Content Include="bin\Debug\Neat_cmd---\data_command_ack.txt" />
+    <Content Include="bin\Debug\Neat_cmd---\devcon.exe" />
+    <Content Include="bin\Debug\Neat_cmd---\result.txt" />
+    <Content Include="bin\Debug\Neat_cmd\ChangeLog.txt" />
+    <Content Include="bin\Debug\Neat_cmd\data_command_ack.txt" />
+    <Content Include="bin\Debug\Neat_cmd\devcon.exe" />
+    <Content Include="bin\Debug\Neat_cmd\dmic_10ch.wav" />
+    <Content Include="bin\Debug\Neat_cmd\HARRIS2.txt" />
+    <Content Include="bin\Debug\Neat_cmd\libflac-8.dll" />
+    <Content Include="bin\Debug\Neat_cmd\libgcc_s_sjlj-1.dll" />
+    <Content Include="bin\Debug\Neat_cmd\libgomp-1.dll" />
+    <Content Include="bin\Debug\Neat_cmd\libid3tag-0.dll" />
+    <Content Include="bin\Debug\Neat_cmd\libogg-0.dll" />
+    <Content Include="bin\Debug\Neat_cmd\libpng16-16.dll" />
+    <Content Include="bin\Debug\Neat_cmd\libsox-3.dll" />
+    <Content Include="bin\Debug\Neat_cmd\libssp-0.dll" />
+    <Content Include="bin\Debug\Neat_cmd\libvorbis-0.dll" />
+    <Content Include="bin\Debug\Neat_cmd\libvorbisenc-2.dll" />
+    <Content Include="bin\Debug\Neat_cmd\libvorbisfile-3.dll" />
+    <Content Include="bin\Debug\Neat_cmd\libwavpack-1.dll" />
+    <Content Include="bin\Debug\Neat_cmd\libwinpthread-1.dll" />
+    <Content Include="bin\Debug\Neat_cmd\LICENSE.GPL.txt" />
+    <Content Include="bin\Debug\Neat_cmd\README.txt" />
+    <Content Include="bin\Debug\Neat_cmd\README.win32.txt" />
+    <Content Include="bin\Debug\Neat_cmd\sdf.txt" />
+    <Content Include="bin\Debug\Neat_cmd\sox-14-4-2_20240816\ChangeLog.txt" />
+    <Content Include="bin\Debug\Neat_cmd\sox-14-4-2_20240816\dmic_10ch.wav" />
+    <Content Include="bin\Debug\Neat_cmd\sox-14-4-2_20240816\libflac-8.dll" />
+    <Content Include="bin\Debug\Neat_cmd\sox-14-4-2_20240816\libgcc_s_sjlj-1.dll" />
+    <Content Include="bin\Debug\Neat_cmd\sox-14-4-2_20240816\libgomp-1.dll" />
+    <Content Include="bin\Debug\Neat_cmd\sox-14-4-2_20240816\libid3tag-0.dll" />
+    <Content Include="bin\Debug\Neat_cmd\sox-14-4-2_20240816\libogg-0.dll" />
+    <Content Include="bin\Debug\Neat_cmd\sox-14-4-2_20240816\libpng16-16.dll" />
+    <Content Include="bin\Debug\Neat_cmd\sox-14-4-2_20240816\libsox-3.dll" />
+    <Content Include="bin\Debug\Neat_cmd\sox-14-4-2_20240816\libssp-0.dll" />
+    <Content Include="bin\Debug\Neat_cmd\sox-14-4-2_20240816\libvorbis-0.dll" />
+    <Content Include="bin\Debug\Neat_cmd\sox-14-4-2_20240816\libvorbisenc-2.dll" />
+    <Content Include="bin\Debug\Neat_cmd\sox-14-4-2_20240816\libvorbisfile-3.dll" />
+    <Content Include="bin\Debug\Neat_cmd\sox-14-4-2_20240816\libwavpack-1.dll" />
+    <Content Include="bin\Debug\Neat_cmd\sox-14-4-2_20240816\libwinpthread-1.dll" />
+    <Content Include="bin\Debug\Neat_cmd\sox-14-4-2_20240816\LICENSE.GPL.txt" />
+    <Content Include="bin\Debug\Neat_cmd\sox-14-4-2_20240816\README.txt" />
+    <Content Include="bin\Debug\Neat_cmd\sox-14-4-2_20240816\README.win32.txt" />
+    <Content Include="bin\Debug\Neat_cmd\sox-14-4-2_20240816\result.txt" />
+    <Content Include="bin\Debug\Neat_cmd\sox-14-4-2_20240816\sox.exe" />
+    <Content Include="bin\Debug\Neat_cmd\sox-14-4-2_20240816\tx_1ch.wav" />
+    <Content Include="bin\Debug\Neat_cmd\sox-14-4-2_20240816\tx_1ch_no.wav" />
+    <Content Include="bin\Debug\Neat_cmd\sox-14-4-2_20240816\tx_4ch.wav" />
+    <Content Include="bin\Debug\Neat_cmd\sox-14-4-2_20240816\tx_7ch.wav" />
+    <Content Include="bin\Debug\Neat_cmd\sox-14-4-2_20240816\Uninstall sox-14.4.2.exe" />
+    <Content Include="bin\Debug\Neat_cmd\sox-14-4-2_20240816\wget.exe" />
+    <Content Include="bin\Debug\Neat_cmd\sox-14-4-2_20240816\zlib1.dll" />
+    <Content Include="bin\Debug\Neat_cmd\sox.exe" />
+    <Content Include="bin\Debug\Neat_cmd\tx_1ch.wav" />
+    <Content Include="bin\Debug\Neat_cmd\tx_1ch_no.wav" />
+    <Content Include="bin\Debug\Neat_cmd\tx_1ch_o.wav" />
+    <Content Include="bin\Debug\Neat_cmd\tx_4ch.wav" />
+    <Content Include="bin\Debug\Neat_cmd\tx_4ch_o.wav" />
+    <Content Include="bin\Debug\Neat_cmd\tx_7ch.wav" />
+    <Content Include="bin\Debug\Neat_cmd\Uninstall sox-14.4.2.exe" />
+    <Content Include="bin\Debug\Neat_cmd\ver.txt" />
+    <Content Include="bin\Debug\Neat_cmd\voice_female_2ch_onetwo.wav" />
+    <Content Include="bin\Debug\Neat_cmd\wget.exe" />
+    <Content Include="bin\Debug\Neat_cmd\zlib1.dll" />
+    <Content Include="bin\Debug\OK_LOG.TXT" />
+    <Content Include="bin\Debug\result\20200811_151933_result.txt" />
+    <Content Include="bin\Debug\result\20210303_104850_result.txt" />
+    <Content Include="bin\Debug\result\20210303_112131_result.txt" />
+    <Content Include="bin\Debug\result\20210303_112933_result.txt" />
+    <Content Include="bin\Debug\result\20210401_142137_result.txt" />
+    <Content Include="bin\Debug\result\20210401_142843_result.txt" />
+    <Content Include="bin\Debug\result\20210401_143501_result.txt" />
+    <Content Include="bin\Debug\result\20240130_144407_result.txt" />
+    <Content Include="bin\Debug\result\20240130_144546_result.txt" />
+    <Content Include="bin\Debug\sdf.txt" />
+    <Content Include="bin\Debug\sox.txt" />
+    <Content Include="bin\Debug\tx_1ch.wav" />
+    <Content Include="bin\Debug\tx_1ch_o.wav" />
+    <Content Include="bin\Debug\tx_4ch.wav" />
+    <Content Include="bin\Debug\tx_4ch_o.wav" />
+    <Content Include="bin\Debug\tx_7ch.wav" />
+    <Content Include="bin\Debug\tx_7ch_o.wav" />
+    <Content Include="bin\Debug\VOCSensorLog.txt" />
+    <Content Include="bin\Debug\voice_female_2ch_onetwo.wav" />
+    <Content Include="bin\Debug\WriteEthMac\adb.exe" />
+    <Content Include="bin\Debug\WriteEthMac\AdbWinApi.dll" />
+    <Content Include="bin\Debug\WriteEthMac\AdbWinUsbApi.dll" />
+    <Content Include="bin\Debug\WriteEthMac\AmtEthInvm.exe" />
+    <Content Include="bin\Debug\WriteEthMac\command_ack.txt" />
+    <Content Include="bin\Debug\WriteEthMac\data_command_ack.txt" />
+    <Content Include="bin\Debug\WriteEthMac\icudt53.dll" />
+    <Content Include="bin\Debug\WriteEthMac\icuin53.dll" />
+    <Content Include="bin\Debug\WriteEthMac\icuuc53.dll" />
+    <Content Include="bin\Debug\WriteEthMac\libgcc_s_dw2-1.dll" />
+    <Content Include="bin\Debug\WriteEthMac\libMPSSE.dll" />
+    <Content Include="bin\Debug\WriteEthMac\libstdc++-6.dll" />
+    <Content Include="bin\Debug\WriteEthMac\libwinpthread-1 - 副本.dll" />
+    <Content Include="bin\Debug\WriteEthMac\libwinpthread-1.dll" />
+    <Content Include="bin\Debug\WriteEthMac\Qt5Core.dll" />
+    <Content Include="bin\Release\20210529.txt" />
+    <Content Include="bin\Release\20211103.txt" />
+    <Content Include="bin\Release\FTTEST.exe" />
+    <Content Include="bin\Release\FTTEST.pdb" />
+    <Content Include="bin\Release\FTTEST_new.exe" />
+    <Content Include="bin\Release\FTTEST_Vol13.exe" />
+    <Content Include="bin\Release\Interop.SDriver.dll" />
+    <Content Include="fttest_logo.ico" />
+    <None Include="Web References\WebReference\AVTC_webservice.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://10.2.100.72:2001/AVTC_webservice.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WebReference\</RelPath>
+      <UpdateFromURL>http://10.2.100.72:2001/AVTC_webservice.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>FTTEST_WebReference_AVTC_webservice</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>
