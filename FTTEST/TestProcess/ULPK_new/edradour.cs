@@ -28,20 +28,25 @@ namespace FTTEST
         bool ULP_Edradour()
         {
             if (adb_Devices() == false) return false;
+            if (Neat_check_sn() == false) return false;
             //if (Edradour_SetBurnInOff() == false) return false;//
-            if (Edradour_SetHdmiInOn() == false) return false;
-                Edradour_SetHdmiInOff();
-            if (preset_CloseCameraVirtualCam() == false) return false;
 
             if (Edradour_Set_BYOD() == false) return false;//
-            //if (Neat_touch_test() == false) return false;
-            if (Neat_check_sn() == false) return false;
+                                                           //if (Neat_touch_test() == false) return false;
+
+            if (preset_CloseCameraVirtualCam() == false) return false;
+            if (Neat_camera_test() == false) return false;
+
             if (Neat_CHECK_ETH_MAC() == false) return false;
             if (Neat_check_btwlan_mac() == false) return false;
-            if (Neat_Ethernet_test() == false) return false;          
-            if (Neat_bt_test() == false) return false;
-           
-            if (Neat_camera_test() == false) return false;
+            if (Neat_Ethernet_test() == false) return false;
+            if (Edradour_SetHdmiInOn() == false) return false;
+            Edradour_SetHdmiInOff();
+            //if (preset_CloseCameraVirtualCam() == false) return false;
+            //if (Neat_bt_test() == false) return false;
+            //if (Edradour_SetHdmiInOn() == false) return false;
+           // Edradour_SetHdmiInOff();
+            //if (Neat_camera_test() == false) return false;
             //if (Neat_camera_tele_test() == false) return false;
             //if (Neat_Ethernet_2_test() == false) return false;
            // if (Neat_check_poe() == false) return false;
